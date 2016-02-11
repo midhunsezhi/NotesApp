@@ -1,0 +1,43 @@
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-size:14px;
+  height:100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+md-toolbar h1 {
+  margin: auto;
+  position: relative;
+}
+
+#mainBody {
+  width:100%;
+} 
+md-content{
+  width:100%;
+}
+
+#content  {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 5px;
+}
+.add-button {
+  font-size: 35px;
+  margin-right: 10px;
+  padding-bottom: 10px;
+}
+
+md-card-title {
+  padding-left: 10px;
+}
+
+md-card {
+  background-color: #C1F2FB;
+  font-family: Garamond;
+}
+
+.card-button:hover {
+  color: red;
+}

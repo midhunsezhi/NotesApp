@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>Notes App</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="assets/app.css"/>
+  </head>
+
+  <body ng-app="notesApp" layout="column" layout-align="center">
+    <md-toolbar layout="row" layout-align="center">
+      <h2> My Notes</h2>
+    </md-toolbar>
+    <div flex layout="row" ng-controller="NoteController" id="mainBody">
+      <md-content class="md-padding">
+        <form ng-submit="addNote()">
+          <div layout layout-align-gt-sm="center">
+            <md-input-container flex>
+              <label>Add a note</label>
+              <input ng-model="currentNote">
+            </md-input-container>
+            <md-input-container>
+               <md-button type="submit" class="md-fab add-button" aria-label="Add Note">
+                  +
+               </md-button>
+            </md-input-container>
+          </div>
+        </form>
+        
+        <md-card ng-repeat="note in notes track by $index">
+          <md-card-title>
+              <h2 class="md-headline">{{'Note '+ ($index+1)}}</h2>
+              <span contenteditable ng-model='notes[$index]'></span>
+          </md-card-title>
+          <md-card-actions layout="row" layout-align="end center" class="layout-align-end-center layout-row">
+            <button class="md-button card-button" ng-click="deleteNote($index)">Delete</button>
+          </md-card-actions>
+        </md-card>
+      </md-content>
+    </div>
+
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./bower_components/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+
+    <script src="./src/todos/TodoController.js"></script>
+
+  </body>
+</html>
